@@ -20,9 +20,8 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>com.qwlabs.doraemon</groupId>
-			<artifactId>jpa</artifactId>
-			<version>0.1.47</version>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<dependency>
