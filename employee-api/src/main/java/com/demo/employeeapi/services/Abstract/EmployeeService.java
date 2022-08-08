@@ -7,11 +7,11 @@ import com.demo.employeeapi.entities.Employee;
 public interface EmployeeService {
     public List<Employee> getAllEmployees();
 
-    public Employee getOneEmployee();
+    public Employee getOneEmployee(int id);
 
-    public Employee postOneEmployee();
+    public Employee postOneEmployee(Employee employee);
 
-    public Employee putOneEmployee(int id);
+    public Employee putOneEmployee(int id, Employee employee);
 
     public void deleteOneEmployee(int id);
 
