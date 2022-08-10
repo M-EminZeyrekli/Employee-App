@@ -1,0 +1,34 @@
+import axios from "axios";
+
+class EmployeeService {
+  constructor() {
+    this.baseUrl = "http://localhost:8080/api/employeees";
+  }
+
+  async getAllEmployees() {
+    const { status, data } = await axios.get(this.baseUrl).then((resp) => resp);
+    return { status, data };
+  }
+
+  async postOneEmployee(body) {
+    const { status, data } = await axios
+      .post(this.baseUrl, body)
+      .then((resp) => resp);
+    return { status, data };
+  }
+
+  async deleteOneEmployee(id) {
+    let url = `${this.baseUrl}/${id}`;
+    const { status } = await axios.delete(url).then((resp) => resp);
+    return { status };
+  }
+
+  async getSearch(q) {
+    const url = `${this.baseUrl}/search?q=${q}`;
+    const { status, data } = await axios
+      .get(url)
+      .then((resp) => resp)
+      .catch((err) => console.error(err));
+    return { status, data };
+  }
+}
