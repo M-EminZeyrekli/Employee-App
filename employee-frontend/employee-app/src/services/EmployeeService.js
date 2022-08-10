@@ -32,3 +32,4 @@ class EmployeeService {
     return { status, data };
   }
 }
+export default EmployeeService;

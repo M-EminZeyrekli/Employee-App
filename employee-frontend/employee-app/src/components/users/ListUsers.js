@@ -1,7 +1,11 @@
 import React from 'react'
 
-export default function ListUsers() {
+export default function ListUsers(employeeService) {
   return (
-    <div>ListUsers</div>
+    <div>
+
+
+        
+    </div>
   )
 }
