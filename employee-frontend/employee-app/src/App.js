@@ -7,9 +7,10 @@ import EmployeeService from "./services/EmployeeService";
 function App() {
   const employeeService = new EmployeeService();
   const [employees, setemployees] = useState([]);
+  const [refresh, setRefresh] = useState(false);
   useEffect(() => {
     employeeService.getAllEmployees().then((resp) => setemployees(resp.data));
-  }, []);
+  }, [refresh]);
 
   return (
     <div className="App">

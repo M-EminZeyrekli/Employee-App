@@ -2,7 +2,7 @@ import axios from "axios";
 
 class EmployeeService {
   constructor() {
-    this.baseUrl = "http://localhost:8080/api/employeees";
+    this.baseUrl = "http://localhost:8080/api/employees";
   }
 
   async getAllEmployees() {
