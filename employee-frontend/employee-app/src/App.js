@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <AdminAppBar />
-      <ListUsers employees={employees} />
+      <ListUsers employees={employees} setemployees={setemployees} />
     </div>
   );
 }

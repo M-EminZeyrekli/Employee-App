@@ -19,8 +19,17 @@ import ImageIcon from "@mui/icons-material/Image";
 import WorkIcon from "@mui/icons-material/Work";
 import BeachAccessIcon from "@mui/icons-material/BeachAccess";
 import Paper from "@mui/material/Paper";
+import EmployeeService from "../../services/EmployeeService";
 
-export default function ListUsers({ employees }) {
+export default function ListUsers({ employees, setemployees }) {
+  const employeeService = new EmployeeService();
+
+  const handleRemove = (id) => {
+    console.log(id);
+    employeeService.deleteOneEmployee(id);
+    let afterRemove = employees.filter((employee)=>employee.id !==id);
+    setemployees(afterRemove);
+  };
   return (
     <div>
       <TableContainer sx={{ m: 1, p: 1 }} component={Paper}>
@@ -45,7 +54,7 @@ export default function ListUsers({ employees }) {
                 <TableCell align="left">
                   <ButtonGroup orientation="vertical">
                     <Button>Edit</Button>
-                    <Button>Remove</Button>
+                    <Button onClick={() => handleRemove(emp.id)}>Remove</Button>
                   </ButtonGroup>
                 </TableCell>
               </TableRow>
