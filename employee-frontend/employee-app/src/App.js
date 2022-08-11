@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import AdminAppBar from "./components/AdminAppBar";
-import ListUsers from "./components/users/ListUsers";
+import ListEmployees from "./components/users/ListEmployee";
 import EmployeeService from "./services/EmployeeService";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <AdminAppBar />
-      <ListUsers employees={employees} setemployees={setemployees} />
+      <ListEmployees employees={employees} setemployees={setemployees} />
     </div>
   );
 }
